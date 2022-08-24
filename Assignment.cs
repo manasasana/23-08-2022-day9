@@ -14,21 +14,23 @@ public class two
         SqlCommand cmd = new SqlCommand("passportinformation", sqlcon);
         cmd.CommandType = System.Data.CommandType.StoredProcedure;
         Console.WriteLine("enter passport details");
-        int pn = Convert.ToInt32(Console.ReadLine());
-        string name = Console.ReadLine();
-        DateTime vdate=Convert.ToDateTime(Console.ReadLine());
-        int val = Convert.ToInt32(Console.ReadLine());
-        string applied = Console.ReadLine();
         for (int i = 1; i <= 10; i++)
         {
+        cmd.Parameters.Clear();
+            int pn = Convert.ToInt32(Console.ReadLine());
+
             cmd.Parameters.Add("@passportnumber", System.Data.SqlDbType.Int).Value = pn;
+            string name = Console.ReadLine();
             cmd.Parameters.Add("@candidatename", System.Data.SqlDbType.VarChar).Value = name;
+            DateTime vdate = Convert.ToDateTime(Console.ReadLine());
+
             cmd.Parameters.Add("@passportexpirydate", System.Data.SqlDbType.Date).Value = vdate;
+            int val = Convert.ToInt32(Console.ReadLine());
             cmd.Parameters.Add("@yearsofvalidity", System.Data.SqlDbType.Int).Value = val;
+            string applied = Console.ReadLine();
             cmd.Parameters.Add("@appliedthroughchannel", System.Data.SqlDbType.VarChar).Value = applied;
-        }
-       
         cmd.ExecuteNonQuery();
+        }
         sqlcon.Close();
 
     }
