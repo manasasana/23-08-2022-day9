@@ -71,11 +71,12 @@ public class two
 
         SqlCommand cmd = new SqlCommand("informationofstudent", sqlcon);
         cmd.CommandType = System.Data.CommandType.StoredProcedure;
-        SqlDataReader dr = cmd.ExecuteReader();
+        
         Console.WriteLine("student details");
         int age = Convert.ToInt32(Console.ReadLine());
         
             cmd.Parameters.Add("@age", System.Data.SqlDbType.Int).Value = age;
+        SqlDataReader dr = cmd.ExecuteReader();
         while (dr.Read())
         {
             Console.WriteLine(dr[0].ToString() + " " + dr[1].ToString()+
