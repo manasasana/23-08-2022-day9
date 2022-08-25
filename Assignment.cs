@@ -2,7 +2,7 @@
 
 using System.Data.SqlClient;
 
-/*namespace day9;
+namespace day9;
 public class two
 {
     public static void Main(string[] args)
@@ -34,9 +34,10 @@ public class two
         sqlcon.Close();
 
     }
-}*/
+}
 
-/*use student;
+   **SQL CODE**
+use student;
 go
 create procedure passportinformation @passportnumber int, @candidatename varchar(10),
 @passportexpirydate date, @yearsofvalidity int, @appliedthroughchannel varchar(10) as
@@ -48,8 +49,6 @@ years_of_validity int,
 applied_through_channel varchar(10));
 insert into passport values(@passportnumber, @candidatename,
 @passportexpirydate, @yearsofvalidity, @appliedthroughchannel);
-
-
 select* from passport;*/
 
 
@@ -91,7 +90,7 @@ public class two
 }
 
 
-/*SQl code
+**SQL CODE**
     create table info(
 Name varchar(10), 
 Age int, 
@@ -108,4 +107,3 @@ insert into info values('tara',23,'female','CSE',1);
 exec informationofstudent 1
 
 
-*/
